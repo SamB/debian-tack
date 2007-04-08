@@ -1,0 +1,290 @@
+2007-04-08  Thomas Dickey  <tom@crayon>
+
+	* configure: regen'd
+
+	* Makefile.in: define $(INCDIR) - needed for building in ncurses tree
+
+	* tack.h:
+	expand the ExitProgram() macro into a function which can call the ncurses-
+	and tack-specific leak-auditing functions.
+
+	* configure.in:
+	check for _nc_free_tic() function, since that's what tack needs.
+
+	* edit.c: add tack_edit_leaks(), to help audit memory leaks
+
+	* tack.c:
+	add ExitProgram() function, to free all application memory on exit to simplify
+	leak-checking.
+
+	* fun.c: add tack_fun_leaks(), to help audit memory leaks
+
+	* init.c: free the TERMTYPE used just for error-checking (memory leak)
+
+	* tack.h:
+	define ExitProgram() macro to hide details of memory audit on exit().
+
+	* tack.c, init.c, sysdep.c: use ExitProgram() macro
+
+	* configure.in: add "--disable-leaks" and related testing options.
+
+	* aclocal.m4:
+	add macros used for "--disable-leaks" and related testing options
+
+	* configure.in:
+	use CF_NCURSES_CONFIG to find ncurses5-config, etc., fixing rpath issues.
+	add check for ticlib, if needed.  remove check for pdcurses (this will
+	never work with anything except for ncurses), and add checks for select()
+	and gettimeofday().
+
+	* aclocal.m4:
+	modify CF_XOPEN_SOURCE to add FreeBSD/GNU (kFreeBSD) pattern
+
+	* Makefile.in: rename mkinstalldirs to mkdirs.sh
+
+	* HISTORY: 1.04
+
+2007-04-07  Thomas Dickey  <tom@crayon>
+
+	* ansi.c, output.c: fixes from Coverity report
+
+2007-03-25  Thomas Dickey  <tom@crayon>
+
+	* mkdirs.sh: RCS_BASE
+
+2007-01-28  Thomas Dickey  <tom@crayon>
+
+	* HISTORY: tack's out of ncurses now.
+
+	* Makefile.in: make install rule work
+
+	* tack.h: bump to 1.03
+
+	* Makefile.in: first cut of installing manpage
+
+	* Makefile.in: tweaks to work after chopping out of ncurses tree
+
+2007-01-27  Thomas Dickey  <tom@crayon>
+
+	* HISTORY: update to 1.03
+
+	* README: FROM_KEYS
+
+2007-01-13  Thomas Dickey  <tom@crayon>
+
+	* Makefile.in: FROM_KEYS
+
+	* configure: RCS_BASE
+
+	* configure.in, aclocal.m4: FROM_KEYS
+
+2006-12-23  Thomas Dickey  <tom@crayon>
+
+	* modules: FROM_KEYS
+
+2006-12-22  Thomas Dickey  <tom@crayon>
+
+	* config.guess: RCS_BASE
+
+2006-12-08  Thomas Dickey  <tom@crayon>
+
+	* config.sub: RCS_BASE
+
+2006-11-25  Thomas Dickey  <tom@crayon>
+
+	* output.c: FROM_KEYS
+
+	* modes.c: from ncurses
+
+	* init.c, fun.c: FROM_KEYS
+
+	* crum.c: from ncurses
+
+	* color.c, charset.c, tack.h: FROM_KEYS
+
+2006-06-24  Thomas Dickey  <tom@crayon>
+
+	* control.c, edit.c: FROM_KEYS
+
+2006-05-06  Thomas Dickey  <tom@crayon>
+
+	* sync.c: FROM_KEYS
+
+2006-04-22  Thomas Dickey  <tom@crayon>
+
+	* tack.1: FROM_KEYS
+
+2005-09-17  Thomas Dickey  <tom@crayon>
+
+	* ansi.c, pad.c, sysdep.c: FROM_KEYS
+
+	* menu.c, scan.c, tack.c: from ncurses
+
+	* COPYING: fix address
+
+2003-11-29  Thomas Dickey  <tom@crayon>
+
+	* install-sh: resync with my-autoconf
+
+2002-06-29  Thomas Dickey  <tom@crayon>
+
+	* mkinstalldirs: RCS_BASE
+
+2001-06-22  Thomas Dickey  <tom@crayon>
+
+	* install-sh: RCS_BASE
+
+1999-02-07  Thomas Dickey  <tom@crayon>
+
+	* HISTORY: nit
+
+	* init.c: tweak to make this build after renaming as per Alexander
+
+1998-09-26  Thomas Dickey  <tom@crayon>
+
+	* edit.c: add param to _nc_tic_expand()
+
+1998-03-28  Thomas Dickey  <tom@crayon>
+
+	* Makefile.in: updates to sync with ncurses 4.2
+
+1998-02-11  Thomas Dickey  <tom@crayon>
+
+	* ncurses_tst.hin: FROM_KEYS
+
+1998-01-09  Daniel.Weaver
+
+	* tack.c, Makefile.in, tack.h, control.c, color.c, charset.c, ansi.c, sysdep.c, sync.c, scan.c, pad.c, output.c, modes.c, menu.c, init.c, fun.c, edit.c, crum.c, HISTORY, COPYING:
+	tack-1.00
+
+1998-01-03  Thomas Dickey  <tom@crayon>
+
+	* tack.h: moved ncurses' externs to tic.h
+
+	* edit.c: split-out _nc_tic_expand(), as per DW's request.
+
+	* sysdep.c: nits (we don't _need_ time.h?)
+
+	* tack.h: SCO's compiler doesn't like array-of-const
+
+1998-01-02  Thomas Dickey  <tom@crayon>
+
+	* control.c: work with no 'gettimeofday()'
+	workaround for SCO 3.x compiler which gets confused by array of const.
+
+	* output.c, edit.c, fun.c: SCO's compiler doesn't like array-of-const
+
+	* ansi.c: SCO's compiler: parameter promotion warnings.
+
+1997-12-28  Thomas Dickey  <tom@crayon>
+
+	* tack.h: first cut of fixes for AIX/SCO/CLIX
+
+	* sysdep.c, control.c: first cut of fixes for AIX/CLIX/SCO
+
+1997-12-27  Thomas Dickey  <tom@crayon>
+
+	* ansi.c, charset.c, control.c, crum.c, edit.c, fun.c, init.c, menu.c, modes.c, output.c, scan.c, sync.c, sysdep.c, tack.c:
+	integration with ncurses: restructured includes, fix gcc warnings
+
+	* pad.c:
+	integration with ncurses: restructures includes, fix gcc warnings
+
+	* color.c: typo
+
+	* tack.h:
+	integration with ncurses: reordered headers, provide fallback definitions
+	for the stuff we get from ncurses_cfg.h, make some stuff const.
+
+	* Makefile.in: use HAVE_SELECT from configure-script
+
+	* color.c:
+	integration with ncurses: move most headers into tack.h, fix gcc warnings
+
+	* Makefile.in: we'll have a config.h (actually ncurses_cfg.h)
+
+	* modules: set base-subset
+
+1997-12-24  Daniel.Weaver
+
+	* HISTORY: ncurses-4.1-971220
+
+1997-12-22  Daniel.Weaver
+
+	* ansi.c, tack.1: ncurses-4.1-971220
+
+1997-12-02  Daniel.Weaver
+
+	* tack.c, init.c: ncurses-4.1-971220
+
+1997-11-30  Daniel.Weaver
+
+	* edit.c: ncurses-4.1-971220
+
+1997-11-29  Daniel.Weaver
+
+	* charset.c, pad.c: ncurses-4.1-971220
+
+1997-11-07  Daniel.Weaver
+
+	* sync.c, fun.c, crum.c, modes.c, control.c, sysdep.c, output.c, tack.h:
+	ncurses-4.1-971220
+
+1997-11-04  Daniel.Weaver
+
+	* Makefile.in, menu.c: ncurses-4.1-971220
+
+1997-11-03  Daniel.Weaver
+
+	* scan.c, color.c, modules: ncurses-4.1-971220
+
+1997-10-29  Daniel.Weaver
+
+	* control.c, fun.c: ncurses-4.1-971101
+
+1997-10-26  Daniel.Weaver
+
+	* makefile, edit.c, tack.h, sync.c: ncurses-4.1-971101
+
+1997-10-25  Daniel.Weaver
+
+	* pad.c, tack.1: ncurses-4.1-971101
+
+1997-10-19  Daniel.Weaver
+
+	* tack.c, sysdep.c, scan.c, output.c, modes.c, menu.c, init.c, crum.c, color.c, charset.c, ansi.c, HISTORY:
+	ncurses-4.1-971101
+
+1997-10-11  dickey
+
+	* RCS: PERMIT FILE
+
+1997-10-06  Daniel.Weaver
+
+	* makefile, tac.h, tack.c: ncurses-4.1-971011
+
+1997-10-04  Daniel.Weaver
+
+	* control.c, fun.c, sync.c, init.c, pad.c, modes.c, sysdep.c:
+	ncurses-4.1-971011
+
+1997-10-03  Daniel.Weaver
+
+	* charset.c, output.c, edit.c, crum.c: ncurses-4.1-971011
+
+1997-10-02  Daniel.Weaver
+
+	* menu.c: ncurses-4.1-971011
+
+1997-09-29  Daniel.Weaver
+
+	* color.c, ansi.c: ncurses-4.1-971011
+
+1997-09-28  Daniel.Weaver
+
+	* tic.h: ncurses-4.1-971011
+
+1997-09-22  Daniel.Weaver
+
+	* scan.c: ncurses-4.1-971011
+
