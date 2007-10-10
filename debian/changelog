@@ -1,0 +1,6 @@
+tack (1.06-1) unstable; urgency=low
+
+  * Initial release (Closes: #442154).
+  * tack was previously part of ncurses-bin, but got split out by upstream.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 10 Oct 2007 20:10:00 +0200

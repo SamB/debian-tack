@@ -1,0 +1,17 @@
+Source: tack
+Section: misc
+Priority: optional
+Maintainer: Daniel Baumann <daniel@debian.org>
+Build-Depends: debhelper (>= 5), dpatch, autotools-dev, libncurses5-dev (>= 5.6+20071006-3)
+Standards-Version: 3.7.2
+
+Package: tack
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: terminfo action checker
+ The 'tack' program is a diagnostic tool that is designed to create and verify
+ the correctness of terminfo's. This program can be used to create new terminal
+ descriptions that are not included in the standard ncurses release.
+ .
+ Although 'tack' has been distributed with ncurses-bin, it is not an integral
+ part of ncurses and was thus split out from it by upstream.
