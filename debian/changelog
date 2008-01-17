@@ -1,3 +1,9 @@
+tack (1.06-3) unstable; urgency=low
+
+  * Removing watch file (Closes: #450351).
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 17 Jan 2008 13:57:00 +0100
+
 tack (1.06-2) unstable; urgency=low
 
   * Bumping policy version.
