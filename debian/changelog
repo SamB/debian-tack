@@ -1,3 +1,14 @@
+tack (1.06-4) unstable; urgency=low
+
+  * Adding vcs fields in control file.
+  * Reordering rules file.
+  * Rewriting copyright file in machine-interpretable format.
+  * Updating package to debhelper 6.
+  * Removing vim cruft.
+  * Reverting config.guess and configu.sub to upstream.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 16 Apr 2008 18:25:00 +0200
+
 tack (1.06-3) unstable; urgency=low
 
   * Removing watch file (Closes: #450351).

@@ -1,14 +1,9 @@
 #!/usr/bin/make -f
 
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
-
 include /usr/share/dpatch/dpatch.make
 
-# These are used for cross-compiling and for saving the configure script
-# from having to guess our platform (since we know it already)
-DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
-DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+DEB_HOST_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
 CFLAGS = -Wall -g
 
@@ -18,28 +13,19 @@ else
 	CFLAGS += -O2
 endif
 
-config.status: configure patch
-	dh_testdir
-
-	# Configuring package
-	CFLAGS="$(CFLAGS)" LDFLAGS="-ltic" ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --mandir=\$${prefix}/share/man
-
-build: build-stamp
-build-stamp: config.status
-	dh_testdir
-
-	# Building package
-	$(MAKE)
-
-	touch build-stamp
-
 clean: unpatch
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
+	rm -f config.guess config.sub
 
-	# Cleaning package
 	[ ! -f Makefile ] || $(MAKE) distclean
+
+	dh_clean
+
+config.status: configure patch
+	dh_testdir
+
 ifneq "$(wildcard /usr/share/misc/config.sub)" ""
 	cp -f /usr/share/misc/config.sub config.sub
 endif
@@ -47,7 +33,15 @@ ifneq "$(wildcard /usr/share/misc/config.guess)" ""
 	cp -f /usr/share/misc/config.guess config.guess
 endif
 
-	dh_clean
+	CFLAGS="$(CFLAGS)" LDFLAGS="-Wl,-z,defs,-ltic" ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --mandir=\$${prefix}/share/man
+
+build: build-stamp
+build-stamp: config.status
+	dh_testdir
+
+	$(MAKE)
+
+	touch build-stamp
 
 install: build
 	dh_testdir
@@ -55,17 +49,15 @@ install: build
 	dh_clean -k
 	dh_installdirs
 
-	# Installing package
-	$(MAKE) prefix=$(CURDIR)/debian/tack/usr install
+	$(MAKE) DESTDIR=$(CURDIR)/debian/tack install
 
-binary-indep: build install
+binary: binary-arch
 
 binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs CHANGES
 	dh_installdocs
-	dh_install
 	dh_strip
 	dh_compress
 	dh_fixperms
@@ -75,5 +67,6 @@ binary-arch: build install
 	dh_md5sums
 	dh_builddeb
 
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install
+binary-indep:
+
+.PHONY: clean build install binary binary-arch binary-indep
