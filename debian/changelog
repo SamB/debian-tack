@@ -1,3 +1,9 @@
+tack (1.06-5) unstable; urgency=low
+
+  * Adding debug package.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 16 Apr 2008 18:36:00 +0200
+
 tack (1.06-4) unstable; urgency=low
 
   * Adding vcs fields in control file.

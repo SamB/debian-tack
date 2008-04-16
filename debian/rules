@@ -58,7 +58,7 @@ binary-arch: build install
 	dh_testroot
 	dh_installchangelogs CHANGES
 	dh_installdocs
-	dh_strip
+	dh_strip --dbg-package=tack-dbg
 	dh_compress
 	dh_fixperms
 	dh_installdeb
