@@ -1,3 +1,17 @@
+tack (1.06-6) unstable; urgency=low
+
+  * Correcting indenting in copyright file.
+  * Updatingto debhelper 7.
+  * Updating to standards 3.8.0.
+  * Updating vcs fields in control file.
+  * Using patch-stamp rather than patch in rules file.
+  * Updating cross handling in rules file.
+  * Temporary passing -ltic and -lncurses in LDFLAGS directly to the
+    make call rather than to configure, thanks to Neil Williams
+    <codehelp@debian.org> (Closes: #501421).
+
+ -- Daniel Baumann <daniel@debian.org>  Wed,  8 Oct 2008 08:48:00 +0200
+
 tack (1.06-5) unstable; urgency=low
 
   * Adding debug package.
@@ -11,7 +25,7 @@ tack (1.06-4) unstable; urgency=low
   * Rewriting copyright file in machine-interpretable format.
   * Updating package to debhelper 6.
   * Removing vim cruft.
-  * Reverting config.guess and configu.sub to upstream.
+  * Reverting config.guess and config.sub to upstream.
 
  -- Daniel Baumann <daniel@debian.org>  Wed, 16 Apr 2008 18:25:00 +0200
 

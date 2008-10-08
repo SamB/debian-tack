@@ -2,11 +2,11 @@ Source: tack
 Section: misc
 Priority: optional
 Maintainer: Daniel Baumann <daniel@debian.org>
-Build-Depends: debhelper (>= 6), dpatch, autotools-dev, libncurses5-dev (>= 5.6+20071006-3)
-Standards-Version: 3.7.3
+Build-Depends: debhelper (>= 7), dpatch, autotools-dev, libncurses5-dev (>= 5.6+20071006-3)
+Standards-Version: 3.8.0
 Homepage: ftp://ftp.invisible-island.net/ncurses/
-Vcs-Browser: http://git.debian.net/?p=tack.git
-Vcs-Git: git://git.debian.net/git/tack.git
+Vcs-Browser: http://git.debian.net/?p=debian/tack.git
+Vcs-Git: git://git.debian.net/git/debian/tack.git
 
 Package: tack
 Architecture: any
