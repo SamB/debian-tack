@@ -1,3 +1,10 @@
+tack (1.06-7) unstable; urgency=low
+
+  * Removing previous workaround, not required anymore since ncurses
+    5.6+20081012.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 19 Oct 2008 14:39:00 +0200
+
 tack (1.06-6) unstable; urgency=low
 
   * Correcting indenting in copyright file.
