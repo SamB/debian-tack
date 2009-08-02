@@ -2,15 +2,16 @@ Source: tack
 Section: misc
 Priority: optional
 Maintainer: Daniel Baumann <daniel@debian.org>
-Build-Depends: debhelper (>= 7), dpatch, autotools-dev, libncurses5-dev (>= 5.6+20081012)
-Standards-Version: 3.8.0
+Build-Depends:
+ debhelper (>= 7), quilt, autotools-dev, libncurses5-dev (>= 5.6+20081012)
+Standards-Version: 3.8.2
 Homepage: ftp://ftp.invisible-island.net/ncurses/
 Vcs-Browser: http://git.debian.net/?p=debian/tack.git
 Vcs-Git: git://git.debian.net/git/debian/tack.git
 
 Package: tack
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: terminfo action checker
  The 'tack' program is a diagnostic tool that is designed to create and verify
  the correctness of terminfo's. This program can be used to create new terminal
@@ -21,9 +22,9 @@ Description: terminfo action checker
 
 Package: tack-dbg
 Architecture: any
-Section: devel
+Section: debug
 Priority: extra
-Depends: tack (= ${binary:Version})
+Depends: ${misc:Depends}, tack (= ${binary:Version})
 Description: terminfo action checker (debug)
  The 'tack' program is a diagnostic tool that is designed to create and verify
  the correctness of terminfo's. This program can be used to create new terminal

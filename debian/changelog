@@ -1,3 +1,17 @@
+tack (1.06-8) unstable; urgency=low
+
+  * Replacing obsolete dh_clean -k with dh_prep.
+  * Updating section of the debug package.
+  * Using correct rfc-2822 date formats in changelog.
+  * Updating package to standards version 3.8.2.
+  * Adding misc depends.
+  * Prefixing debhelper files with package name.
+  * Using quilt rather than dpatch.
+  * Updating year in copyright file.
+  * Minimizing rules file.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 03 Aug 2009 01:31:12 +0200
+
 tack (1.06-7) unstable; urgency=low
 
   * Removing previous workaround, not required anymore since ncurses
@@ -17,7 +31,7 @@ tack (1.06-6) unstable; urgency=low
     make call rather than to configure, thanks to Neil Williams
     <codehelp@debian.org> (Closes: #501421).
 
- -- Daniel Baumann <daniel@debian.org>  Wed,  8 Oct 2008 08:48:00 +0200
+ -- Daniel Baumann <daniel@debian.org>  Wed, 08 Oct 2008 08:48:00 +0200
 
 tack (1.06-5) unstable; urgency=low
 
