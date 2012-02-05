@@ -6,11 +6,11 @@
 override_dh_auto_clean:
 	dh_auto_clean
 
-	rm -f config.guess config.sub
+#	rm -f config.guess config.sub
 
 override_dh_auto_configure:
-	cp -f /usr/share/misc/config.guess config.guess
-	cp -f /usr/share/misc/config.sub config.sub
+#	cp -f /usr/share/misc/config.guess config.guess
+#	cp -f /usr/share/misc/config.sub config.sub
 
 	LDFLAGS="-Wl,-z,defs,-ltic" dh_auto_configure
 

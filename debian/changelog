@@ -1,3 +1,13 @@
+tack (1.06-10) unstable; urgency=low
+
+  * Adopt package.
+  * Switch to dpkg-source 3.0 (quilt) format.
+  * Let debhelper handle pulling up-to-date config.guess and config.sub in
+    from autotools-dev.
+  * Fix "hyphen-used-as-minus-sign" warning from lintian.
+
+ -- Samuel Bronson <naesten@gmail.com>  Sat, 04 Feb 2012 21:55:31 -0500
+
 tack (1.06-9) unstable; urgency=low
 
   * Updating package to standards version 3.8.3.

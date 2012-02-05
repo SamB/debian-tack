@@ -1,0 +1,13 @@
+Index: tack-1.06/tack.1
+===================================================================
+--- tack-1.06.orig/tack.1	2012-02-04 22:23:31.000000000 -0500
++++ tack-1.06/tack.1	2012-02-04 22:39:14.000000000 -0500
+@@ -33,7 +33,7 @@
+ .SH NAME
+ \fBtack\fR - \fIterminfo\fR action checker
+ .SH SYNOPSIS
+-\fBtack\fR [-itV] [term]
++\fBtack\fR [\-itV] [term]
+ .br
+ .SH DESCRIPTION
+ The \fBtack\fR program has three purposes:

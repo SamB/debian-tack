@@ -1,0 +1,3 @@
+version = 3
+
+ftp://invisible-island.net/ncurses/tack-(.+)\.tgz debian uupdate

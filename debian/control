@@ -1,9 +1,9 @@
 Source: tack
 Section: misc
 Priority: optional
-Maintainer: Debian QA Group <packages@qa.debian.org>
+Maintainer: Samuel Bronson <naesten@gmail.com>
 Build-Depends:
- debhelper (>= 7), autotools-dev, libncurses5-dev (>= 5.6+20081012), quilt
+ debhelper (>= 7.0.50~), autotools-dev, libncurses5-dev (>= 5.6+20081012)
 Standards-Version: 3.8.3
 Homepage: ftp://ftp.invisible-island.net/ncurses/
 
