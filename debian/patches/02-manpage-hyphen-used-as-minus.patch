@@ -1,3 +1,6 @@
+Description: Fix "hyphen-used-as-minus-sign" warning from lintian.
+Author: Samuel Bronson <naesten@gmail.com>
+
 Index: tack-1.06/tack.1
 ===================================================================
 --- tack-1.06.orig/tack.1	2012-02-04 22:23:31.000000000 -0500

@@ -1,18 +1,10 @@
 #!/usr/bin/make -f
 
 %:
-	dh ${@} --with quilt
-
-override_dh_auto_clean:
-	dh_auto_clean
-
-#	rm -f config.guess config.sub
+	dh ${@}
 
 override_dh_auto_configure:
-#	cp -f /usr/share/misc/config.guess config.guess
-#	cp -f /usr/share/misc/config.sub config.sub
-
-	LDFLAGS="-Wl,-z,defs,-ltic" dh_auto_configure
+	LDFLAGS="-Wl,-z,defs,-ltic" dh_auto_configure -- --enable-warnings
 
 override_dh_auto_install:
 	dh_auto_install -- DESTDIR=$(CURDIR)/debian/tack
