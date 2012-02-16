@@ -8,6 +8,8 @@ tack (1.07-1) unstable; urgency=low
   * Fix "hyphen-used-as-minus-sign" warning from lintian.
   * Update package to standards version 3.9.2.
   * Add a debian/watch file again.
+  * Bump debhelper build-depends: to (>= 7.0.50~), since we use
+    override_dh_<foo> targets.
   * Enable build warnings.
 
  -- Samuel Bronson <naesten@gmail.com>  Sat, 04 Feb 2012 23:37:39 -0500
