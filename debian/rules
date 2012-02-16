@@ -9,5 +9,8 @@ override_dh_auto_configure:
 override_dh_auto_install:
 	dh_auto_install -- DESTDIR=$(CURDIR)/debian/tack
 
+override_dh_installchangelogs:
+	dh_installchangelogs -k
+
 override_dh_strip:
 	dh_strip --dbg-package=tack-dbg
