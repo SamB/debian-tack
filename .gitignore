@@ -1,0 +1,15 @@
+*~
+*.o
+/Makefile
+config.log
+config.status
+ncurses_cfg.h
+/tack
+
+# Debian stuff
+*.debhelper.log
+*.dh-orig
+/debian/*.substvars
+/debian/files
+/debian/tack/*
+/debian/tack-dbg/*
