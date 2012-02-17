@@ -1,22 +1,10 @@
-tack (1.07-2) unstable; urgency=low
-
-  * Actually get debhelper to update config.guess and config.sub.
-    (It seems that the "autotools-dev" addon must be explicitly requested.)
-    Thanks to Jakub Wilk for prompting me to check this again.
-  * Add debhelper bump to changelog for 1.07-1.
-  * Add Vcs-Browser: and Vcs-Git: fields to debian/control.
-  * Install a symlink CHANGES.gz -> changelog.gz in the doc directory.
-  * Update debian/copyright to current (nearly-1.0) DEP5 format.
-  * Closes: #660140 (ITP for this package).
-
- -- Samuel Bronson <naesten@gmail.com>  Thu, 16 Feb 2012 14:40:07 -0500
-
-tack (1.07-1) unstable; urgency=low
+tack (1.07-1~mentors1) unstable; urgency=low
 
   * New upstream release.
   * Adopt package.
+    Closes: #660140 (ITP for this package).
   * Switch to dpkg-source 3.0 (quilt) format.
-  * Let debhelper handle pulling up-to-date config.guess and config.sub in
+  * Have debhelper handle pulling up-to-date config.guess and config.sub in
     from autotools-dev.
   * Fix "hyphen-used-as-minus-sign" warning from lintian.
   * Update package to standards version 3.9.2.
@@ -24,8 +12,11 @@ tack (1.07-1) unstable; urgency=low
   * Bump debhelper build-depends: to (>= 7.0.50~), since we use
     override_dh_<foo> targets.
   * Enable build warnings.
+  * Add Vcs-Browser: and Vcs-Git: fields to debian/control.
+  * Install a symlink CHANGES.gz -> changelog.gz in the doc directory.
+  * Update debian/copyright to current (nearly-1.0) DEP5 format.
 
- -- Samuel Bronson <naesten@gmail.com>  Sat, 04 Feb 2012 23:37:39 -0500
+ -- Samuel Bronson <naesten@gmail.com>  Fri, 17 Feb 2012 14:12:03 -0500
 
 tack (1.06-9) unstable; urgency=low
 
