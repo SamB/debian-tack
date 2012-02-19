@@ -13,3 +13,5 @@ ncurses_cfg.h
 /debian/files
 /debian/tack/*
 /debian/tack-dbg/*
+/debian/autoreconf.before
+/debian/autoreconf.after

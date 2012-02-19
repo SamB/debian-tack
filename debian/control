@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Samuel Bronson <naesten@gmail.com>
 Build-Depends:
- debhelper (>= 7.0.50~), autotools-dev, libncurses5-dev (>= 5.6+20081012)
+ debhelper (>= 7.0.50~), autoconf-dickey, dh-autoreconf, libncurses5-dev (>= 5.6+20081012)
 Standards-Version: 3.9.2
 Homepage: ftp://ftp.invisible-island.net/ncurses/
 Vcs-Browser: https://github.com/SamB/debian-tack

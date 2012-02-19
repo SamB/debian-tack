@@ -1,7 +1,10 @@
 #!/usr/bin/make -f
 
 %:
-	dh ${@} --with autotools_dev
+	dh ${@} --with autoreconf
+
+override_dh_autoreconf:
+	dh_autoreconf autoreconf-dickey
 
 override_dh_auto_configure:
 	LDFLAGS="-Wl,-z,defs,-ltic" dh_auto_configure -- --enable-warnings
