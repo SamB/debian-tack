@@ -1,11 +1,14 @@
-tack (1.07-1~mentors1) unstable; urgency=low
+tack (1.07-1~mentors2) unstable; urgency=low
 
   * New upstream release.
   * Adopt package.
     Closes: #660140 (ITP for this package).
   * Switch to dpkg-source 3.0 (quilt) format.
-  * Have debhelper handle pulling up-to-date config.guess and config.sub in
-    from autotools-dev.
+  * Use dh-autoreconf to regenerate the configure script during build
+    + Build-depends on dh-autoreconf and autoconf-dickey.
+    + It also takes care of pulling up-to-date config.guess and config.sub
+      scripts in from autotools-dev
+    + Drop build-depends on autotools-dev.
   * Fix "hyphen-used-as-minus-sign" warning from lintian.
   * Update package to standards version 3.9.2.
   * Add a debian/watch file again.
@@ -15,6 +18,8 @@ tack (1.07-1~mentors1) unstable; urgency=low
   * Add Vcs-Browser: and Vcs-Git: fields to debian/control.
   * Install a symlink CHANGES.gz -> changelog.gz in the doc directory.
   * Update debian/copyright to current (nearly-1.0) DEP5 format.
+  * Add support for dpkg-buildflags(1) by bumping debhelper to
+    compatibility level 9.
 
  -- Samuel Bronson <naesten@gmail.com>  Fri, 17 Feb 2012 14:12:03 -0500
 
