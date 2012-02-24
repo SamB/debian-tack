@@ -1,5 +1,6 @@
 Description: Fix "hyphen-used-as-minus-sign" warning from lintian.
 Author: Samuel Bronson <naesten@gmail.com>
+Forwarded: http://thread.gmane.org/gmane.comp.lib.ncurses.bugs/4805
 
 Index: tack-1.06/tack.1
 ===================================================================
