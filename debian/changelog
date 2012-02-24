@@ -1,27 +1,33 @@
-tack (1.07-1~mentors2) unstable; urgency=low
+tack (1.07-1~mentors3) unstable; urgency=low
 
   * New upstream release.
   * Adopt package.
     Closes: #660140 (ITP for this package).
   * Switch to dpkg-source 3.0 (quilt) format.
-  * Use dh-autoreconf to regenerate the configure script during build
-    + Build-depends on dh-autoreconf and autoconf-dickey.
-    + It also takes care of pulling up-to-date config.guess and config.sub
-      scripts in from autotools-dev
-    + Drop build-depends on autotools-dev.
   * Fix "hyphen-used-as-minus-sign" warning from lintian.
-  * Update package to standards version 3.9.2.
-  * Add a debian/watch file again.
-  * Bump debhelper build-depends: to (>= 7.0.50~), since we use
-    override_dh_<foo> targets.
+  * Re-add debian/watch file (was dropped in 1.06-3).
+    + Enable uupdate.
   * Enable build warnings.
   * Add Vcs-Browser: and Vcs-Git: fields to debian/control.
   * Install a symlink CHANGES.gz -> changelog.gz in the doc directory.
-  * Update debian/copyright to current (nearly-1.0) DEP5 format.
-  * Add support for dpkg-buildflags(1) by bumping debhelper to
-    compatibility level 9.
+  * Update debian/copyright to final DEP5 format.
+  * Use dh-autoreconf to regenerate the configure script during build
+    + Build-depends on dh-autoreconf and autoconf-dickey.
+    + This also takes care of pulling up-to-date config.guess and config.sub
+      scripts in from autotools-dev.
+    + Drop build-depends on autotools-dev (subsumed by dh-autoreconf).
+  * Add support for dpkg-buildflags(1) by bumping debhelper compatibility
+    level (and build-depends) to 9.
+    + Drop the LDFLAGS="-Wl,-z,defs,-ltic from the call to
+      dh_auto_configure, so that configure will pick up the LDFLAGS from
+      dpkg-buildflags(1).
+    + Replace it with:
+      - LIBS="-ltic" as an argument to dh_auto_configure
+      - DEB_LDFLAGS_MAINT_APPEND for the rest.
+  * Update package to Standards-Version: 3.9.3.
+  * Thanks to Jakub Wilk for his thorough review.
 
- -- Samuel Bronson <naesten@gmail.com>  Fri, 17 Feb 2012 14:12:03 -0500
+ -- Samuel Bronson <naesten@gmail.com>  Fri, 24 Feb 2012 16:22:24 -0500
 
 tack (1.06-9) unstable; urgency=low
 
