@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Samuel Bronson <naesten@gmail.com>
 Build-Depends:
- debhelper (>= 9~),
+ debhelper (>= 9),
  autoconf-dickey,
  dh-autoreconf,
  libncurses5-dev (>= 5.6+20081012)
