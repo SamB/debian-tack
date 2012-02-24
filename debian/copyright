@@ -1,4 +1,4 @@
-Format: http://dep.debian.net/deps/dep5
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-name: tack
 Upstream-contact: Thomas Dickey <dickey@invisible-island.net>
 Source: ftp://ftp.invisible-island.net/ncurses/
