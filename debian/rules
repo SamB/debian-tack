@@ -1,5 +1,8 @@
 #!/usr/bin/make -f
 
+# Make sure we aren't missing any symbols
+export DEB_LDFLAGS_MAINT_APPEND = "-Wl,-z,defs"
+
 %:
 	dh ${@} --with autoreconf
 
