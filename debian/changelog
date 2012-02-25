@@ -1,4 +1,4 @@
-tack (1.07-1~mentors3) unstable; urgency=low
+tack (1.07-1~mentors4) unstable; urgency=low
 
   * New upstream release.
   * Adopt package.
@@ -6,7 +6,6 @@ tack (1.07-1~mentors3) unstable; urgency=low
   * Switch to dpkg-source 3.0 (quilt) format.
   * Fix "hyphen-used-as-minus-sign" warning from lintian.
   * Re-add debian/watch file (was dropped in 1.06-3).
-    + Enable uupdate.
   * Enable build warnings.
   * Add Vcs-Browser: and Vcs-Git: fields to debian/control.
   * Install a symlink CHANGES.gz -> changelog.gz in the doc directory.
