@@ -1,2 +1,3 @@
 01-manpage.patch
 02-manpage-hyphen-used-as-minus.patch
+03-allow-echoing-compilation-commands.patch
