@@ -1,4 +1,4 @@
-tack (1.07-1~mentors4) unstable; urgency=low
+tack (1.07-1~mentors5) unstable; urgency=low
 
   * New upstream release.
   * Adopt package.
@@ -14,7 +14,10 @@ tack (1.07-1~mentors4) unstable; urgency=low
     + Build-depends on dh-autoreconf and autoconf-dickey.
     + This also takes care of pulling up-to-date config.guess and config.sub
       scripts in from autotools-dev.
-    + Drop build-depends on autotools-dev (subsumed by dh-autoreconf).
+    + ... except with autoconf-dickey it doesn't, so use autotools-dev's
+      dh_ commands; bump build-depends to autotools-dev (>= 20100122.1)
+      accordingly.  (Yes, even though it says "Do NOT" in the autools-dev
+      README.Debian.gz.)
   * Add support for dpkg-buildflags(1) by bumping debhelper compatibility
     level (and build-depends) to 9.
     + Drop the LDFLAGS="-Wl,-z,defs,-ltic from the call to
@@ -23,6 +26,7 @@ tack (1.07-1~mentors4) unstable; urgency=low
     + Replace it with:
       - LIBS="-ltic" as an argument to dh_auto_configure
       - DEB_LDFLAGS_MAINT_APPEND for the rest.
+        Build-Depends: dpkg-dev (>= 1.16.1).
   * Update package to Standards-Version: 3.9.3.
   * Thanks to Jakub Wilk for his thorough review.
 

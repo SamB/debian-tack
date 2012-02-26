@@ -6,8 +6,15 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs
 %:
 	dh ${@} --with autoreconf
 
+# The autotools_dev addon doesn't seem to work here, so call the dh_
+# commands explicitly...
+override_dh_autoreconf_clean:
+	dh_autotools-dev_restoreconfig
+	dh_autoreconf_clean
+
 override_dh_autoreconf:
 	dh_autoreconf autoreconf-dickey -- -f -i
+	dh_autotools-dev_updateconfig
 
 override_dh_auto_configure:
 	dh_auto_configure -- --enable-warnings LIBS="-ltic"
