@@ -1,4 +1,62 @@
-2009-12-26  Thomas Dickey  <tom@crayon>
+2011-05-01  Thomas E. Dickey  <tom@invisible-island.net>
+
+	* configure: regen
+
+	* aclocal.m4, configure.in: add check for lint program
+
+	* output.c, fun.c: gcc warning
+
+	* color.c: fix clang warnings
+
+	* output.c: fix clang warnings
+	ensure that EOF is tested properly on return from getchp()
+
+	* fun.c, crum.c: fix clang warning
+
+	* fun.c: ensure that EOF is checked for return-value from getchp()
+	(report by Joachim Schmitz)
+
+	* aclocal.m4: resync with my-autoconf, many fixes
+
+	* package/debian/changelog, package/tack.spec, tack.h: bump
+
+2011-04-01  Thomas E. Dickey  <tom@invisible-island.net>
+
+	* config.sub: update to 2011-04-01
+
+2011-02-02  Thomas E. Dickey  <tom@invisible-island.net>
+
+	* config.guess: update to 2011-01-01
+
+2010-09-04  Thomas E. Dickey  <tom@invisible-island.net>
+
+	* package/tack.spec, package/debian/rules, package/debian/docs, package/debian/copyright, package/debian/control, package/debian/watch, package/debian/changelog, package/debian/source/format:
+	RCS_BASE
+
+	* package/RCS, package/debian/RCS, package/debian/source/RCS:
+	PERMIT FILE
+
+	* tack.c, tack.h: add patch-date to version message
+
+2010-09-03  Thomas E. Dickey  <tom@invisible-island.net>
+
+	* AUTHORS: RCS_BASE
+
+	* sysdep.c, sync.c, init.c, fun.c, output.c, scan.c, control.c:
+	gcc-warnings
+
+	* fun.c: indent
+
+	* Makefile.in: add dummy for "make check".
+
+	* tack.h, tack.c, sysdep.c, sync.c, scan.c, pad.c, output.c, modes.c, menu.c, init.c, fun.c, edit.c, crum.c, control.c, color.c, charset.c, ansi.c:
+	indent
+
+2010-04-20  Thomas E. Dickey  <tom@invisible-island.net>
+
+	* package/debian/compat: RCS_BASE
+
+2009-12-26  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* configure:
 	regen to get new macros, as well as to use autoconf-252 (patched)
@@ -23,22 +81,22 @@
 	fix an incorrect malloc-size in show_report(), which could cause core-dump
 	when displaying long list of function-keys, e.g., for xterm-new
 
-2009-11-19  Thomas Dickey  <tom@crayon>
+2009-11-19  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* config.guess, config.sub: update to 2009-11-20
 
-2007-08-12  Thomas Dickey  <tom@crayon>
+2007-08-12  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* edit.c:
 	as of 2007/8/12, ncurses no longer exports the data _nc_info_hash_table.
 	Instead, use the function _nc_get_hash_table(), which is in ncurses 5.0
 
-2007-08-11  Thomas Dickey  <tom@crayon>
+2007-08-11  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* HISTORY:
 	tweak to build with latest ncurses (does not rely on new api's)
 
-2007-04-29  Thomas Dickey  <tom@crayon>
+2007-04-29  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* HISTORY, tack.h: mark 1.05
 
@@ -70,7 +128,7 @@
 	update $(LINK) to work with ncurses after importing CF_WITH_LIBTOOL change
 	that moved $(CC) into $(LIBTOOL_LINK) symbol.
 
-2007-04-08  Thomas Dickey  <tom@crayon>
+2007-04-08  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* configure: regen'd
 
@@ -116,15 +174,15 @@
 
 	* HISTORY: 1.04
 
-2007-04-07  Thomas Dickey  <tom@crayon>
+2007-04-07  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* ansi.c, output.c: fixes from Coverity report
 
-2007-03-25  Thomas Dickey  <tom@crayon>
+2007-03-25  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* mkdirs.sh: RCS_BASE
 
-2007-01-28  Thomas Dickey  <tom@crayon>
+2007-01-28  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* HISTORY: tack's out of ncurses now.
 
@@ -136,13 +194,13 @@
 
 	* Makefile.in: tweaks to work after chopping out of ncurses tree
 
-2007-01-27  Thomas Dickey  <tom@crayon>
+2007-01-27  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* HISTORY: update to 1.03
 
 	* README: FROM_KEYS
 
-2007-01-13  Thomas Dickey  <tom@crayon>
+2007-01-13  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* Makefile.in: FROM_KEYS
 
@@ -150,19 +208,19 @@
 
 	* configure.in, aclocal.m4: FROM_KEYS
 
-2006-12-23  Thomas Dickey  <tom@crayon>
+2006-12-23  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* modules: FROM_KEYS
 
-2006-12-22  Thomas Dickey  <tom@crayon>
+2006-12-22  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* config.guess: RCS_BASE
 
-2006-12-08  Thomas Dickey  <tom@crayon>
+2006-12-08  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* config.sub: RCS_BASE
 
-2006-11-25  Thomas Dickey  <tom@crayon>
+2006-11-25  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* output.c: FROM_KEYS
 
@@ -174,19 +232,19 @@
 
 	* color.c, charset.c, tack.h: FROM_KEYS
 
-2006-06-24  Thomas Dickey  <tom@crayon>
+2006-06-24  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* control.c, edit.c: FROM_KEYS
 
-2006-05-06  Thomas Dickey  <tom@crayon>
+2006-05-06  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* sync.c: FROM_KEYS
 
-2006-04-22  Thomas Dickey  <tom@crayon>
+2006-04-22  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* tack.1: FROM_KEYS
 
-2005-09-17  Thomas Dickey  <tom@crayon>
+2005-09-17  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* ansi.c, pad.c, sysdep.c: FROM_KEYS
 
@@ -194,33 +252,33 @@
 
 	* COPYING: fix address
 
-2003-11-29  Thomas Dickey  <tom@crayon>
+2003-11-29  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* install-sh: resync with my-autoconf
 
-2002-06-29  Thomas Dickey  <tom@crayon>
+2002-06-29  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* mkinstalldirs: RCS_BASE
 
-2001-06-22  Thomas Dickey  <tom@crayon>
+2001-06-22  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* install-sh: RCS_BASE
 
-1999-02-07  Thomas Dickey  <tom@crayon>
+1999-02-07  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* HISTORY: nit
 
 	* init.c: tweak to make this build after renaming as per Alexander
 
-1998-09-26  Thomas Dickey  <tom@crayon>
+1998-09-26  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* edit.c: add param to _nc_tic_expand()
 
-1998-03-28  Thomas Dickey  <tom@crayon>
+1998-03-28  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* Makefile.in: updates to sync with ncurses 4.2
 
-1998-02-11  Thomas Dickey  <tom@crayon>
+1998-02-11  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* ncurses_tst.hin: FROM_KEYS
 
@@ -229,7 +287,7 @@
 	* tack.c, Makefile.in, tack.h, control.c, color.c, charset.c, ansi.c, sysdep.c, sync.c, scan.c, pad.c, output.c, modes.c, menu.c, init.c, fun.c, edit.c, crum.c, HISTORY, COPYING:
 	tack-1.00
 
-1998-01-03  Thomas Dickey  <tom@crayon>
+1998-01-03  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* tack.h: moved ncurses' externs to tic.h
 
@@ -239,7 +297,7 @@
 
 	* tack.h: SCO's compiler doesn't like array-of-const
 
-1998-01-02  Thomas Dickey  <tom@crayon>
+1998-01-02  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* control.c: work with no 'gettimeofday()'
 	workaround for SCO 3.x compiler which gets confused by array of const.
@@ -248,13 +306,13 @@
 
 	* ansi.c: SCO's compiler: parameter promotion warnings.
 
-1997-12-28  Thomas Dickey  <tom@crayon>
+1997-12-28  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* tack.h: first cut of fixes for AIX/SCO/CLIX
 
 	* sysdep.c, control.c: first cut of fixes for AIX/CLIX/SCO
 
-1997-12-27  Thomas Dickey  <tom@crayon>
+1997-12-27  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* ansi.c, charset.c, control.c, crum.c, edit.c, fun.c, init.c, menu.c, modes.c, output.c, scan.c, sync.c, sysdep.c, tack.c:
 	integration with ncurses: restructured includes, fix gcc warnings
@@ -327,7 +385,7 @@
 	* tack.c, sysdep.c, scan.c, output.c, modes.c, menu.c, init.c, crum.c, color.c, charset.c, ansi.c, HISTORY:
 	ncurses-4.1-971101
 
-1997-10-11  dickey
+1997-10-11  Thomas E. Dickey  <dickey@invisible-island.net>
 
 	* RCS: PERMIT FILE
 
