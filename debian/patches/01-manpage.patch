@@ -1,9 +1,8 @@
 Author: Daniel Baumann <daniel@debian.org>
 Description: Correct manpage section.
 
-diff -Naurp tack.orig/tack.1 tack/tack.1
---- tack.orig/tack.1	2009-08-02 23:16:17.000000000 +0000
-+++ tack/tack.1	2009-08-02 23:18:25.000000000 +0000
+--- tack.orig/tack.1
++++ tack/tack.1
 @@ -27,7 +27,7 @@
  .\"***************************************************************************
  .\"

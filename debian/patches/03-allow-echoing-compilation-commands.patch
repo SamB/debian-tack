@@ -4,7 +4,7 @@ Description: Allow echoing of compilation commands
  Can be turned on by passing the "--disable-echo" flag to configure,
  just like for ncurses (from which some of the code is copied).
 Author: Samuel Bronson <naesten@gmail.com>
-Forwarded: http://article.gmane.org/gmane.comp.lib.ncurses.bugs/4809
+Forwarded: http://thread.gmane.org/gmane.comp.lib.ncurses.bugs/4809
 
 --- tack-1.07.orig/configure.in
 +++ tack-1.07/configure.in
