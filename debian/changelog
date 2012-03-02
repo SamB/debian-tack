@@ -1,3 +1,32 @@
+tack (1.07-20120226-1~mentors1) UNRELEASED; urgency=low
+
+  * New upstream snapshot 1.07-20110501
+    + Fixes a couple of EOF-related sign extension errors.
+    + Improves autoconfigurey.
+    + Adds patchlevel to version number output.
+    + Includes elementary Debian packaging.
+  
+  * New upstream snapshot 1.07-20110626
+    + Bug-fix to 'show "GR" label in appropriate ANSI character-sets'.
+    + Update's Daniel Weaver's email address in the tack(1) manpage.
+    + More autoconfigurey.
+  
+  * New upstream snapshot 1.07-20120226
+    + Improves autoconfigurey to, among other things:
+      - find libtic on its own when needed, e.g. with
+        libncurses5-dev (>= 5.6+20071006-3).
+      - not pull in libncurses when libtinfo will do.
+      - allow printing of compilation commands.
+  
+  * Drop patch 03-allow-echoing-compilation-commands.patch;
+    upstream did this in a nicer way.
+  * Drop LIBS=-ltic kludge from debian/rules, since we no longer need it.
+  * Drop some context lines from patch 01-manpage.patch,
+    to avoid conflicts due to RCS keywords whenever tack.1 is changed
+    upstream.
+
+ -- Samuel Bronson <naesten@gmail.com>  Thu, 01 Mar 2012 19:31:06 -0500
+
 tack (1.07-1) unstable; urgency=low
 
   * New upstream release.

@@ -17,7 +17,7 @@ override_dh_autoreconf:
 	dh_autotools-dev_updateconfig
 
 override_dh_auto_configure:
-	dh_auto_configure -- --enable-warnings LIBS="-ltic"
+	dh_auto_configure -- --enable-warnings
 
 override_dh_auto_install:
 	dh_auto_install -- DESTDIR=$(CURDIR)/debian/tack
