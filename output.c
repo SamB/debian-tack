@@ -1,5 +1,5 @@
 /*
-** Copyright (C) 1991, 1997 Free Software Foundation, Inc.
+** Copyright (C) 1991, 1997-2011,2012 Free Software Foundation, Inc.
 **
 ** This file is part of TACK.
 **
@@ -23,7 +23,7 @@
 #include <tack.h>
 #include <time.h>
 
-MODULE_ID("$Id: output.c,v 1.18 2011/05/01 21:46:26 tom Exp $")
+MODULE_ID("$Id: output.c,v 1.20 2012/03/03 16:07:33 tom Exp $")
 
 /* globals */
 long char_sent;			/* number of characters sent */
@@ -85,7 +85,7 @@ getnext(int mask)
     fflush(stdout);
     if (nodelay_read) {
 	while (1) {
-	    ch = (int) read(fileno(stdin), &buf, 1);
+	    ch = (int) read(fileno(stdin), &buf, sizeof(buf));
 	    if (ch == -1)
 		return EOF;
 	    if (ch == 1)
@@ -130,7 +130,7 @@ tc_putch(int c)
 	    fprintf(log_fp, "<%s>", c0[ch]);
 	    log_count += 5;
 	} else if (ch < 127) {
-	    fprintf(log_fp, "%c", ch);
+	    fprintf(log_fp, "%c", (char) ch);
 	    log_count += 1;
 	} else {
 	    fprintf(log_fp, "<%02x>", ch);
@@ -760,28 +760,32 @@ wait_here(void)
 **	Read a string of characters from the input stream.
 */
 void
-read_string(
-	       char *buf,
-	       int length)
+read_string(char *buf,
+	    size_t length)
 {
-    int ch, i;
+    int ch;
+    size_t i;
 
-    for (i = 0; i < length - 1;) {
-	ch = getchp(STRIP_PARITY);
-	if (ch == '\r' || ch == '\n' || ch == EOF) {
-	    break;
-	}
-	if (ch == '\b' || ch == 127) {
-	    if (i) {
-		putchp('\b');
-		putchp(' ');
-		putchp('\b');
-		i--;
+    if (length > 1) {
+	for (i = 0; i < length - 1;) {
+	    ch = getchp(STRIP_PARITY);
+	    if (ch == '\r' || ch == '\n' || ch == EOF) {
+		break;
 	    }
-	} else {
-	    buf[i++] = (char) ch;
-	    putchp(ch);
+	    if (ch == '\b' || ch == 127) {
+		if (i) {
+		    putchp('\b');
+		    putchp(' ');
+		    putchp('\b');
+		    i--;
+		}
+	    } else {
+		buf[i++] = (char) ch;
+		putchp(ch);
+	    }
 	}
+    } else {
+	i = 0;
     }
     buf[i] = '\0';
     put_crlf();

@@ -1,3 +1,81 @@
+2012-03-03  Thomas E. Dickey  <tom@invisible-island.net>
+
+	* fun.c: gcc warning
+
+	* configure: regen
+
+	* configure.in: Solaris' "set" does not quote - fix with sed.
+
+	* configure: regen
+
+	* configure.in:
+	substitution for --disable-echo feature did not work with FreeBSD 7.2;
+	work around using output of shell's "set" command.  Also remove CF_PRG_RULES
+	which is not needed.
+
+	* aclocal.m4: remove CF_PRG_RULES - unused
+
+	* sysdep.c, scan.c, output.c, ansi.c, edit.c, control.c, fun.c, sync.c, tack.h:
+	strict gcc 4.1.2 warnings with CentOS 5.7 64-bit
+
+	* init.c, tack.c:
+	quiet unnecesary warning about ignoring return-value from system()
+
+	* configure:
+	regen with ac252 20120303 to work with Intel 12.0.3 compiler
+
+	* tack.h:
+	quiet unnecesary warning about ignoring return-value from system()
+
+2012-03-02  Thomas E. Dickey  <tom@invisible-island.net>
+
+	* configure: regen
+
+	* output.c: icc9 warning
+
+	* configure.in: LIBS_CURSES_symbol is redundant - remove
+
+	* package/debian/changelog, package/tack.spec, tack.h: bump-version
+
+	* tack.h: quiet gcc -Wundef warnings
+	also quiet two no-return cases when configuring with no-leaks option.
+
+	* configure.in:
+	Add CF_ERRNO, CF_LINK_DATAONLY checks with supporting macros to address
+	gcc -Wundef warnings about DECL_ERRNO and BROKEN_LINKER symbols.
+
+	* configure.in:
+	add EXTRA_CFLAGS to CFLAGS/CPPFLAGS (report by Samuel Bronson)
+
+	* aclocal.m4:
+	Add CF_ERRNO, CF_LINK_DATAONLY checks with supporting macros to address
+	gcc -Wundef warnings about DECL_ERRNO and BROKEN_LINKER symbols.
+
+2012-03-01  Thomas E. Dickey  <tom@invisible-island.net>
+
+	* Makefile.in: copyright date
+
+2012-02-29  Werner.Fink
+
+	* Makefile.in, configure.in:
+	Update configure-script and makefile template to work with this post-5.9
+	change, allowing build of tack within the ncurses source-tree:
+
+	20110924
+		+ modify configure script and makefiles to split TIC_ARGS and
+		  TINFO_ARGS into pieces corresponding to LDFLAGS and LIBS variables,
+		  to help separate searches for tic- and tinfo-libraries (patch by Nick
+		  Alcock aka "Nix").
+
+	The change is prompted by review of OpenSUSE package by Werner Fink, using
+	a patch from the rpm source file:
+		ncurses-5.9-tack-tinfo.dif (2011-11-18)
+
+	and discarding
+		ncurses-5.7-tack.dif (2010-01-12)
+
+	because the latter breaks builds with libtool -TD
+
 2012-02-26  Thomas E. Dickey  <tom@invisible-island.net>
 
 	* configure: regen
